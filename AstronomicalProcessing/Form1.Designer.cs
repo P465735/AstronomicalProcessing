@@ -1,6 +1,6 @@
 ﻿namespace AstronomicalProcessing
 {
-    partial class Form1
+    partial class AstronomicalProcessing
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,78 +28,129 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
-            searchButton = new Button();
-            sortButton = new Button();
-            searchBox = new TextBox();
-            editBox = new TextBox();
+            DataListBox = new ListBox();
+            SearchButton = new Button();
+            SearchBox = new TextBox();
+            EditBox = new TextBox();
+            SortButton = new Button();
+            EditLabel = new Label();
+            SearchLabel = new Label();
+            SaveButton = new Button();
+            LoadButton = new Button();
             SuspendLayout();
             // 
-            // listBox1
+            // DataListBox
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 12);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(281, 334);
-            listBox1.TabIndex = 0;
+            DataListBox.FormattingEnabled = true;
+            DataListBox.ItemHeight = 15;
+            DataListBox.Location = new Point(12, 12);
+            DataListBox.Name = "DataListBox";
+            DataListBox.Size = new Size(281, 334);
+            DataListBox.TabIndex = 0;
             // 
-            // searchButton
+            // SearchButton
             // 
-            searchButton.Location = new Point(299, 70);
-            searchButton.Name = "searchButton";
-            searchButton.Size = new Size(100, 23);
-            searchButton.TabIndex = 1;
-            searchButton.Text = "Search";
-            searchButton.UseVisualStyleBackColor = true;
+            SearchButton.Location = new Point(299, 123);
+            SearchButton.Name = "SearchButton";
+            SearchButton.Size = new Size(104, 23);
+            SearchButton.TabIndex = 1;
+            SearchButton.Text = "Search";
+            SearchButton.UseVisualStyleBackColor = true;
+            SearchButton.Click += SearchButton_Click;
             // 
-            // sortButton
+            // SearchBox
             // 
-            sortButton.Location = new Point(299, 99);
-            sortButton.Name = "sortButton";
-            sortButton.Size = new Size(100, 23);
-            sortButton.TabIndex = 2;
-            sortButton.Text = "Sort";
-            sortButton.UseVisualStyleBackColor = true;
+            SearchBox.Location = new Point(299, 94);
+            SearchBox.Name = "SearchBox";
+            SearchBox.Size = new Size(104, 23);
+            SearchBox.TabIndex = 3;
             // 
-            // searchBox
+            // EditBox
             // 
-            searchBox.Location = new Point(299, 41);
-            searchBox.Name = "searchBox";
-            searchBox.Size = new Size(100, 23);
-            searchBox.TabIndex = 3;
-            searchBox.Text = "Search";
+            EditBox.Location = new Point(299, 176);
+            EditBox.Name = "EditBox";
+            EditBox.Size = new Size(104, 23);
+            EditBox.TabIndex = 4;
             // 
-            // editBox
+            // SortButton
             // 
-            editBox.Location = new Point(299, 12);
-            editBox.Name = "editBox";
-            editBox.Size = new Size(100, 23);
-            editBox.TabIndex = 4;
-            editBox.Text = "Edit";
+            SortButton.Location = new Point(299, 41);
+            SortButton.Name = "SortButton";
+            SortButton.Size = new Size(104, 23);
+            SortButton.TabIndex = 5;
+            SortButton.Text = "Sort Data";
+            SortButton.UseVisualStyleBackColor = true;
+            SortButton.Click += SortButton_Click;
             // 
-            // Form1
+            // EditLabel
+            // 
+            EditLabel.AutoSize = true;
+            EditLabel.ForeColor = SystemColors.ControlText;
+            EditLabel.Location = new Point(299, 158);
+            EditLabel.Name = "EditLabel";
+            EditLabel.Size = new Size(108, 15);
+            EditLabel.TabIndex = 6;
+            EditLabel.Text = "Edit Selected Value:";
+            // 
+            // SearchLabel
+            // 
+            SearchLabel.AutoSize = true;
+            SearchLabel.Location = new Point(299, 76);
+            SearchLabel.Name = "SearchLabel";
+            SearchLabel.Size = new Size(104, 15);
+            SearchLabel.TabIndex = 7;
+            SearchLabel.Text = "Enter Search Term:";
+            // 
+            // SaveButton
+            // 
+            SaveButton.Location = new Point(299, 205);
+            SaveButton.Name = "SaveButton";
+            SaveButton.Size = new Size(104, 23);
+            SaveButton.TabIndex = 8;
+            SaveButton.Text = "Save";
+            SaveButton.UseVisualStyleBackColor = true;
+            SaveButton.Click += SaveButton_Click;
+            // 
+            // LoadButton
+            // 
+            LoadButton.Location = new Point(299, 12);
+            LoadButton.Name = "LoadButton";
+            LoadButton.Size = new Size(104, 23);
+            LoadButton.TabIndex = 9;
+            LoadButton.Text = "Load Data";
+            LoadButton.UseVisualStyleBackColor = true;
+            LoadButton.Click += LoadButton_Click;
+            // 
+            // AstronomicalProcessing
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(415, 393);
-            Controls.Add(editBox);
-            Controls.Add(searchBox);
-            Controls.Add(sortButton);
-            Controls.Add(searchButton);
-            Controls.Add(listBox1);
-            Name = "Form1";
-            Text = "Form1";
+            ClientSize = new Size(415, 357);
+            Controls.Add(LoadButton);
+            Controls.Add(SaveButton);
+            Controls.Add(SearchLabel);
+            Controls.Add(EditLabel);
+            Controls.Add(SortButton);
+            Controls.Add(EditBox);
+            Controls.Add(SearchBox);
+            Controls.Add(SearchButton);
+            Controls.Add(DataListBox);
+            Name = "AstronomicalProcessing";
+            Text = "Astronomical Processing";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private ListBox listBox1;
-        private Button searchButton;
-        private Button sortButton;
-        private TextBox searchBox;
-        private TextBox editBox;
+        private ListBox DataListBox;
+        private Button SearchButton;
+        private TextBox SearchBox;
+        private TextBox EditBox;
+        private Button SortButton;
+        private Label EditLabel;
+        private Label SearchLabel;
+        private Button SaveButton;
+        private Button LoadButton;
     }
 }
