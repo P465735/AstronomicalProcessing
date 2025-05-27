@@ -1,11 +1,11 @@
 /* Program: Astronomical Processing
- * Description: Brief explanation of the program and list, Inputs, Processes, Outputs
+ * Description: GUI application to view, sort, search, and edit neutrino data for a 24 hour period
  *
  *
- * Author: Samuel Dunlop, AstroData Refinement, Sprint One
+ * Author: Samuel Dunlop, Astrodata Refinement, Sprint One
  * Created: 22/5/2025
- * Modified: 26/5/2025
- * Version: 1.0
+ * Modified: 27/5/2025
+ * Version: 1.0.1
  */
 
 using System.Drawing.Text;
@@ -23,7 +23,11 @@ namespace AstronomicalProcessing
             InitializeComponent();
         }
 
-        // populate the array with random values and display
+        /// <summary>
+        /// populate the array with random values between 10 and 90 and display
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoadButton_Click(object sender, EventArgs e)
         {
             Random rand = new Random();
@@ -37,7 +41,9 @@ namespace AstronomicalProcessing
             MessageBox.Show("Neutrino data loaded.");
         }
 
-        // populate the listbox
+        /// <summary>
+        /// populate the list box with values in the array
+        /// </summary>
         private void DisplayArray()
         {
             DataListBox.Items.Clear();
@@ -47,7 +53,11 @@ namespace AstronomicalProcessing
             }
         }
 
-        // bubble sort the neutrino data
+        /// <summary>
+        /// bubble sort the neutrino data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SortButton_Click(object sender, EventArgs e)
         {
             // declare variable for performing swaps
@@ -74,7 +84,11 @@ namespace AstronomicalProcessing
             MessageBox.Show("Data sorted.");
         }
 
-        // binary search function
+        /// <summary>
+        /// binary search function
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchButton_Click(object sender, EventArgs e)
         {
             // check if data has been sorted before searching
@@ -120,7 +134,11 @@ namespace AstronomicalProcessing
             }
         }
 
-        // replaces the selected index with user-provided value
+        /// <summary>
+        /// replaces the selected index with user-provided value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveButton_Click(object sender, EventArgs e)
         {
             // check the user has selected a value to edit
