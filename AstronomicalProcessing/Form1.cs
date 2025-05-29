@@ -122,7 +122,7 @@ namespace AstronomicalProcessing
                         {
                             DataListBox.SelectedIndex = i;
                             MessageBox.Show($"Value found at list location {i + 1}.");
-                            return;
+                            return; // exit early if value is found
                         }
                     }
 
@@ -244,7 +244,7 @@ namespace AstronomicalProcessing
             {
                 int min = neutrinoValues[0], max = neutrinoValues[neutrinoValues.Length - 1];
 
-                // if 
+                // find the minimum and maximum valus of the array if it isn't sorted
                 if (!dataIsSorted)
                 {
                     foreach (int neutrinoValue in neutrinoValues)
@@ -322,11 +322,13 @@ namespace AstronomicalProcessing
                 int sum = 0;
                 double mean;
 
+                // sum all values in the array
                 foreach (int neutrinoValue in neutrinoValues)
                 {
                     sum += neutrinoValue;
                 }
 
+                // calculate the mean and round to 2 decimal places
                 mean = Double.Round((double)sum / (double)neutrinoValues.Length, 2);
 
                 MeanBox.Text = $"{mean}";
@@ -348,6 +350,7 @@ namespace AstronomicalProcessing
             {
                 int min = neutrinoValues[0], max = neutrinoValues[neutrinoValues.Length - 1];
 
+                // find the minimum and maximum values of the array if it isn't sorted
                 if (!dataIsSorted)
                 {
                     foreach (int neutrinoValue in neutrinoValues)
