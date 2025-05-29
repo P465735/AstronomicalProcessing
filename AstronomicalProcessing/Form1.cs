@@ -302,7 +302,7 @@ namespace AstronomicalProcessing
                     count = 1;
                 }
 
-                ModeBox.Text = $"{mode}, occurrs {maxCount} times";
+                ModeBox.Text = $"{mode}, occurs {maxCount} times";
             }
             else
             {
