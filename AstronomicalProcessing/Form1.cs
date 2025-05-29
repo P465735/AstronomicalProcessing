@@ -1,10 +1,11 @@
 /* Program: Astronomical Processing
- * Description: GUI application to view, sort, search, and edit neutrino data for a 24 hour period
+ * Description: GUI application to view, sort, search, edit, and perform
+ * statistical calculations on a simulated 24 hour period of neutrino data
  *
  *
  * Author: Samuel Dunlop, Astrodata Refinement, Sprint One
  * Created: 22/5/2025
- * Modified: 27/5/2025
+ * Modified: 29/5/2025
  * Version: 2.0.0
  */
 
@@ -17,7 +18,7 @@ namespace AstronomicalProcessing
     {
         // declare fields
         private int[] neutrinoValues = new int[24];
-        private bool dataIsSorted, dataIsLoaded = false;
+        private bool dataIsSorted = false, dataIsLoaded = false;
 
         public AstronomicalProcessing()
         {
@@ -38,8 +39,16 @@ namespace AstronomicalProcessing
                 neutrinoValues[i] = rand.Next(10, 91);
             }
 
+            dataIsLoaded = true;
             dataIsSorted = false;
+
+            // clear math calculation boxes and display new array
+            MidExtremeBox.Clear();
+            ModeBox.Clear();
+            MeanBox.Clear();
+            RangeBox.Clear();
             DisplayArray();
+
             MessageBox.Show("Neutrino data loaded.");
         }
 
@@ -251,7 +260,7 @@ namespace AstronomicalProcessing
                     }
                 }
 
-                MessageBox.Show($"The mid-extreme of the data is {(double)(min + max) / 2.0}");
+                MidExtremeBox.Text = $"{(double)(min + max) / 2.0}";
             }
             else
             {
@@ -293,7 +302,7 @@ namespace AstronomicalProcessing
                     count = 1;
                 }
 
-                MessageBox.Show($"The mod of the data is {mode}, occurring {maxCount} times.");
+                ModeBox.Text = $"{mode}, occurrs {maxCount} times";
             }
             else
             {
@@ -320,7 +329,7 @@ namespace AstronomicalProcessing
 
                 mean = Double.Round((double)sum / (double)neutrinoValues.Length, 2);
 
-                MessageBox.Show($"The mean of the data is {mean}");
+                MeanBox.Text = $"{mean}";
             }
             else
             {
@@ -354,7 +363,7 @@ namespace AstronomicalProcessing
                     }
                 }
 
-                MessageBox.Show($"The range of the data is {max - min}");
+                RangeBox.Text = $"{max - min}";
             }
             else
             {
